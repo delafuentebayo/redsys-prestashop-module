@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>redsys</name>
+	<displayName><![CDATA[Redsys]]></displayName>
+	<version><![CDATA[2.8.4]]></version>
+	<description><![CDATA[Aceptar pagos con tarjeta mediante Redsys]]></description>
+	<author><![CDATA[REDSYS]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
