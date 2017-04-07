@@ -66,6 +66,7 @@ class Redsys extends PaymentModule
 				$this->urltpv = 'http://sis-d.redsys.es/sis/realizarPago/utf-8';
 				break;
 		}
+
 		if (isset($config['REDSYS_NOMBRE']))
 			$this->nombre = $config['REDSYS_NOMBRE'];
 		if (isset($config['REDSYS_CODIGO']))
@@ -434,7 +435,6 @@ class Redsys extends PaymentModule
 		$miObj->setParameter("Ds_Merchant_Module","prestashop_redsys_".$this->version);
 		//Datos de configuración
 		$version = getVersionClave();
-		
 		//Clave del comercio que se extrae de la configuración del comercio
 		// Se generan los parámetros de la petición
 		$request = "";
@@ -454,7 +454,7 @@ class Redsys extends PaymentModule
 			'Ds_MerchantParameters' => $paramsBase64,
 			'Ds_Signature' => $signatureMac,
 		);
-				$form_redsys = '<form id="payment-form" method="POST" action="https://sis-t.redsys.es:25443/sis/realizarPago/utf-8">
+				$form_redsys = '<form id="payment-form" method="POST" action="'.$this->urltpv.'">
                               <input name="Ds_SignatureVersion" value="'.$version.'" type="hidden">
                               <input name="Ds_MerchantParameters" value="'.$paramsBase64.'" type="hidden">
                               <input name="Ds_Signature" value="'.$signatureMac.'" type="hidden">
