@@ -421,9 +421,9 @@ class Redsys extends PaymentModule
 		$miObj->setParameter("DS_MERCHANT_MERCHANTURL",$urltienda);
 		//$miObj->setParameter("DS_MERCHANT_URLOK",$urltienda);
 		$miObj->setParameter("DS_MERCHANT_URLOK",$protocolo.$_SERVER['HTTP_HOST'].__PS_BASE_URI__.'index.php?controller=order-confirmation&id_cart='.$id_cart.'&id_module='.$this->id.'&id_order='.$this->currentOrder.'&key='.$customer->secure_key);
+		$miObj->setParameter("DS_MERCHANT_URLKO",$protocolo.$_SERVER['HTTP_HOST'].__PS_BASE_URI__.'pedido');
 
-		//http://localhost:8888/nuevo_prestashop/es/confirmacion-pedido?id_cart=11&id_module=26&id_order=10&key=e909865c31d029d3a685b6faabd5865e
-		$miObj->setParameter("DS_MERCHANT_URLKO",$protocolo.$_SERVER['HTTP_HOST'].__PS_BASE_URI__.'index.php?controller=order');
+		//ACTIVAR ESTE SI FRIENDLY_URL ES FALSE:$miObj->setParameter("DS_MERCHANT_URLKO",$protocolo.$_SERVER['HTTP_HOST'].__PS_BASE_URI__.'index.php?controller=order');
 		$miObj->setParameter("Ds_Merchant_ConsumerLanguage",$idioma_tpv);
 		$miObj->setParameter("Ds_Merchant_ProductDescription",$productos);
 		//$miObj->setParameter("Ds_Merchant_Titular",$this->nombre);
